@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Multiplication - Table Selection</title>
+    <link rel="stylesheet" href="multiplicationtables.css">
+</head>
+<body>
+    <!-- Selection Screen -->
+    <div id="selectionScreen">
+        <h1>Select the table you want to practice:</h1>
+        <div class="button-container">
+            <button class="table-button" onclick="startGame(1)">Table of 1</button>
+            <button class="table-button" onclick="startGame(2)">Table of 2</button>
+            <button class="table-button" onclick="startGame(3)">Table of 3</button>
+            <button class="table-button" onclick="startGame(4)">Table of 4</button>
+            <button class="table-button" onclick="startGame(5)">Table of 5</button>
+            <button class="table-button" onclick="startGame(6)">Table of 6</button>
+            <button class="table-button" onclick="startGame(7)">Table of 7</button>
+            <button class="table-button" onclick="startGame(8)">Table of 8</button>
+            <button class="table-button" onclick="startGame(9)">Table of 9</button>
+            <button class="table-button" onclick="startGame('mixed')">Mixed Tables</button>
+        </div>
+    </div>
+
+    <!-- Game Screen -->
+    <div id="gameScreen" style="display: none;">
+        <div id="timer">Time: 60s</div>
+        <div id="score">Score: 0</div>
+        <h1>What is <span id="num1"></span> x <span id="num2"></span>?</h1>
+        <div class="targets">
+            <div class="target" onclick="checkAnswer(this)" id="target1"></div>
+            <div class="target" onclick="checkAnswer(this)" id="target2"></div>
+            <div class="target" onclick="checkAnswer(this)" id="target3"></div>
+            <div class="target" onclick="checkAnswer(this)" id="target4"></div>
+        </div>
+        <p id="feedback"></p>
+        <button class="back-button" onclick="returnToMenu()">Return to Menu</button>
+    </div>
+
+    <!-- Result Screen -->
+    <div id="resultScreen" style="display: none; text-align: center;">
+        <h1>Final Results</h1>
+        <div id="resultDetails" style="margin-top: 20px;">
+            <p>Correct Answers: <span id="correctAnswers"></span></p>
+            <p>Incorrect Answers: <span id="incorrectAnswers"></span></p>
+            <p>Accuracy: <span id="accuracy"></span>%</p>
+            <h2>Incorrect Responses:</h2>
+            <ul id="incorrectList"></ul> <!-- List of incorrect answers -->
+        </div>
+        <button class="back-button" onclick="returnToMenu()">Return to Menu</button>
+    </div>
+
+    <!-- Audio Files -->
+    <audio id="correctSound" src="https://www.soundjay.com/button/beep-07.mp3"></audio>
+    <audio id="incorrectSound" src="https://www.soundjay.com/button/beep-10.mp3"></audio>
+
+    <!-- JavaScript File -->
+    <script src="multiplicationtables.js"></script>
+</body>
+</html>
